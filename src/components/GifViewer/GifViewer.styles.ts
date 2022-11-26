@@ -1,22 +1,24 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { SPACING, COLORS } from '../../utils/style/constants'
+
+const FRAME_HEIGHT: number = 180
+const FRAME_WIDTH: number = 280
 
 export const ViewerWrapper = styled.div`
 	position: relative;
-	width: 280px;
+	width: ${FRAME_WIDTH}px;
 	padding: ${SPACING.l} 0;
 	margin: ${SPACING.m} 0 30px;
 `
 
 export const ViewerFrame = styled.div`
 	position: relative;
-	height: 180px;
-	border-radius: ${SPACING.m};
+	height: ${FRAME_HEIGHT}px;
 	box-shadow: 0 0 0 ${SPACING.m} ${COLORS.primary_mahogany};
 `
 
 export const Antennae = styled.div`
-position: absolute;
+	position: absolute;
 	width: 60px;
 	height: 60px;
 	transform: rotate(-45deg);
@@ -48,7 +50,6 @@ export const NoSignalColorWrapper = styled.div`
 	display: flex;
 	width: 100%;
 	height: 100%;
-	border-radius: ${SPACING.m};
 `
 
 export const NoSignalColorBar = styled.div`
@@ -56,8 +57,6 @@ export const NoSignalColorBar = styled.div`
 
 	&:first-child {
 		background-color: ${COLORS.primary_fuchsia};
-		border-top-left-radius: ${SPACING.m};
-		border-bottom-left-radius: ${SPACING.m};
 	}
 
 	&:nth-child(2) {
@@ -70,8 +69,6 @@ export const NoSignalColorBar = styled.div`
 
 	&:last-child {
 		background-color: ${COLORS.primary_coral};
-		border-top-right-radius: ${SPACING.m};
-		border-bottom-right-radius: ${SPACING.m};
 	}
 `
 
@@ -79,7 +76,6 @@ export const Gif = styled.img`
 	object-fit: cover;
 	height: 100%;
 	width: 100%;
-	border-radius: ${SPACING.m};
 `
 
 export const Feet = styled.div`
@@ -93,3 +89,21 @@ export const Feet = styled.div`
 	right: 0;
 	margin: auto	
 `
+
+export const LoadingWrapper = styled.div`
+	display: flex;
+	flex-wrap: wrap; 
+`
+
+const blinkPixel = keyframes`
+	0% { opacity: 0; }
+	100% { opacity: 100; }
+` 
+  export const BlinkPixel = styled.div<{ color: string, time: number }>`
+	height: ${SPACING.s};
+	width: ${SPACING.s};
+	background-color: ${props => props.color};
+	-webkit-animation-name: ${blinkPixel};  
+	-webkit-animation-iteration-count: infinite;  
+	-webkit-animation-duration: ${props => props.time}s; 
+  `

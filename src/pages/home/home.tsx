@@ -5,7 +5,7 @@ import { useGif } from '../../data/hooks/useGif'
 
 export const HomePage = () => {
 	//this is how you'll fetch data
-	const { data: gif, refetch: fetchNewGif, isLoading: gifIsLoading  } = useGif()
+	const { data: gif, refetch: fetchNewGif, isLoading, isFetching, isError  } = useGif()
 
 	return (
 		<PageWrapper>
