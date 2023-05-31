@@ -10,4 +10,15 @@ export const StyledButton = styled.button`
 	font-size: ${FONT_SIZES.standard};
 	font-family: unset;
 	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	transition: border-style 0.5s ease;
+
+	&:hover {
+		background-color: ${ COLORS.primary_coral };
+	}
+
+	&:focus {
+		border-style: dashed;
+	}
 `

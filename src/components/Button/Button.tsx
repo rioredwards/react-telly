@@ -2,13 +2,15 @@ import React from 'react'
 import { StyledButton } from './Button.styles'
 
 type Props = {
-	title: string
+	onClick: React.MouseEventHandler<HTMLButtonElement> | undefined,
+	children: React.ReactNode,
 }
 
-export const Button: React.FC<Props> = ( { title } ) => {
+export const Button: React.FC<Props> = ( props ) => {
+	const { onClick, children } = props
 	return (
-		<StyledButton role={'button'}>
-			{ title }
+		<StyledButton role={'button'} onClick={onClick}>
+			{ children }
 		</StyledButton>
 	)
 }
