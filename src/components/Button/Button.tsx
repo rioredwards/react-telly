@@ -9,7 +9,7 @@ type Props = {
 export const Button: React.FC<Props> = ( props ) => {
 	const { onClick, children } = props
 	return (
-		<StyledButton role={'button'} onClick={() => onClick}>
+		<StyledButton role={'button'} onClick={() => onClick()}>
 			{ children }
 		</StyledButton>
 	)
