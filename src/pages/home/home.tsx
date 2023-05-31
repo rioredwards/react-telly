@@ -1,6 +1,6 @@
 import React from 'react'
 import { PageWrapper } from './home.styles'
-import { Header, GifViewer } from '../../components'
+import { Header, GifViewer, Button } from '../../components'
 import { useGif } from '../../data/hooks/useGif'
 
 export const HomePage = () => {

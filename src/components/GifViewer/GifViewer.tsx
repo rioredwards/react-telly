@@ -11,15 +11,24 @@ type Props = {
 }
 
 export const GifViewer: React.FC<Props> = ( { gifUrl, altText, isLoading, isError } ) => {
-	const noContentToLoad: boolean = !isLoading && !gifUrl
+
+	const getFrameContent = () => {
+		if (isLoading) { 
+			return <LoadingScreen /> 
+		} else if (isError) {
+			return <NoContentScreen title={'Error :('} />
+		} else if (gifUrl) {
+			return <Gif src={gifUrl} alt={altText ?? ""} />
+		} else {
+			return <NoContentScreen />
+		}
+	}
+
 	return (
 		<ViewerWrapper>
 			<Antennae />
 			<ViewerFrame>
-			{ isLoading && <LoadingScreen /> }
-			{ gifUrl && !isLoading && <Gif src={gifUrl} alt={altText ?? ""} /> }
-			{ noContentToLoad && <NoContentScreen /> }
-			{ isError && <NoContentScreen title={'Error :('} /> }
+			{getFrameContent()}
 			</ViewerFrame>
 			<Feet />
 		</ViewerWrapper>
