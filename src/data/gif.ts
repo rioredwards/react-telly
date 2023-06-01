@@ -15,7 +15,7 @@ export type GifType = {
 
 export const fetchGif = async(): Promise<GifType> => {
 
-	const requestUrl: string = `${RANDOM_GIPHY_ENDPOINT}?api_key=${API_KEY}&rating=g&tag=dance`
+	const requestUrl: string = `https://api.giphy.com${RANDOM_GIPHY_ENDPOINT}?api_key=${API_KEY}&rating=g&tag=dance`
 
 	const response: Response = await fetch(requestUrl, {
 		headers: {
