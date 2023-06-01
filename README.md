@@ -43,8 +43,6 @@ To get credentials for the Giphy API:
 
 # Lesson 1: Working with Props and State
 
-You can see a demo of the completed UI for this lesson at https://react-telly.vercel.app/.
-
 ## 1. Render the `Button` component in the `HomePage` component and make the button log something to the console
 ## 2. Now update the button so that when it is clicked, a random gif renders in the `GifViewer` component
 * To do this, you will need to fetch data via the `useGif` hook, which is already imported into the `HomePage` component. `fetchNewGif` is the fetch function and `gif` is that data that is returned from the API.
@@ -53,3 +51,17 @@ You can see a demo of the completed UI for this lesson at https://react-telly.ve
 * You'll notice that the `useGif` hook returns both `isLoading` and `isFetching`, which you can read more about [here](https://tanstack.com/query/v4/docs/react/reference/useQuery). For a smooth loading experience you may want to combine them.
 ## 4. Update the text on the button so it says "Start" until the first time it has been clicked, and then "Change the channel" after that
 * Hint: the [useState hook](https://react.dev/reference/react/useState) is a good way to achieve this
+
+You can see a demo of the completed UI for this lesson at https://react-telly.vercel.app/.
+
+# Lesson 2: Building Components
+
+Now that we've worked with some existing components, let's build our own! Your goal is to create a text input that allows the user to type a keyword in the input and then click the button to fetch a gif to display in the television based on that keyword.
+
+Here are some specifics for the challenge:
+
+* After the user has clicked the button to submit the keyword, the input should revert to its empty state
+* The input should be styled to match this screenshot
+
+
+You can see a demo of the completed UI for this lesson at https://react-telly.vercel.app/lesson-2.
