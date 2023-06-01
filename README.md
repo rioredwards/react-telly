@@ -42,6 +42,8 @@ To get credentials for the Giphy API:
 
 # Lesson 1: Working with Props and State
 
+You can see a demo of the completed UI for this lesson at https://react-telly.vercel.app/.
+
 ## 1. Render the `Button` component in the `HomePage` component and make the button log something to the console
 ## 2. Now update the button so that when it is clicked, a random gif renders in the `GifViewer` component
 * To do this, you will need to fetch data via the `useGif` hook, which is already imported into the `HomePage` component. `fetchNewGif` is the fetch function and `gif` is that data that is returned from the API.
