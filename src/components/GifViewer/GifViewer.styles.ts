@@ -37,7 +37,7 @@ export const NoSignalText = styled.p`
 	color: ${COLORS.neutral_white};
 	background-color: ${COLORS.neutral_black};
 	padding: ${SPACING.xs};
-	width: 120px;
+	width: 180px;
 	height: 20px;
 	text-align: center;
 	left: 0;

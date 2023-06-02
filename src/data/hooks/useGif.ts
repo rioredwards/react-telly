@@ -1,7 +1,10 @@
 import { useQuery } from 'react-query'
-import { fetchGif } from '../gif'
-import { GifType } from '../gif'
+import { fetchGif, GifType } from '../gif'
 
 export const GIF_QUERY_KEY: string = 'fetchingGif'
 
-export const useGif = () => useQuery<GifType, Error>(GIF_QUERY_KEY, fetchGif, {enabled: false})
+export const useGif = (keyWord: string) => useQuery<GifType, Error>(
+	[GIF_QUERY_KEY],
+	async() => fetchGif(keyWord),
+	{enabled: false}
+)
