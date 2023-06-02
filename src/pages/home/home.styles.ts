@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { SPACING } from '../../utils/style/constants'
+import styled from "styled-components"
+import { SPACING } from "../../utils/style/constants"
 
 export const PageWrapper = styled.section`
 	padding: ${SPACING.l};
