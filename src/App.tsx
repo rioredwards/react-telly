@@ -4,7 +4,7 @@ import {
 	createBrowserRouter,
 	RouterProvider,
   } from 'react-router-dom'
-import { HomePage, Lesson2 } from './pages'
+import { HomePage } from './pages'
 
 const queryClient = new QueryClient()
 
@@ -13,10 +13,6 @@ const router = createBrowserRouter([
 	  path: "/",
 	  element: <HomePage/>,
 	},
-	{
-		path: "/lesson-2",
-		element: <Lesson2/>,
-	  },
   ]);
 
 function App() {
