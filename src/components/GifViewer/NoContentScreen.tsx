@@ -1,14 +1,20 @@
-import React from 'react'
-import { NoSignalText, NoSignalColorWrapper, NoSignalColorBar } from './GifViewer.styles'
+import React from "react"
+import {
+	NoSignalText,
+	NoSignalColorWrapper,
+	NoSignalColorBar,
+} from "./GifViewer.styles"
 
 type Props = {
-	title?: string | null,
+	title?: string | null
 }
 
-export const NoContentScreen: React.FC<Props> = ( { title = 'No Signal :(' } ) => {
+export const NoContentScreen: React.FC<Props> = ({
+	title = "No Signal :(",
+}) => {
 	return (
 		<React.Fragment>
-			<NoSignalText>{ title }</NoSignalText>
+			<NoSignalText>{title}</NoSignalText>
 			<NoSignalColorWrapper>
 				<NoSignalColorBar />
 				<NoSignalColorBar />
@@ -16,6 +22,5 @@ export const NoContentScreen: React.FC<Props> = ( { title = 'No Signal :(' } ) =
 				<NoSignalColorBar />
 			</NoSignalColorWrapper>
 		</React.Fragment>
-
 	)
 }

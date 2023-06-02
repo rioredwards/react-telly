@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components'
-import { SPACING, COLORS } from '../../utils/style/constants'
+import styled, { keyframes } from "styled-components"
+import { SPACING, COLORS } from "../../utils/style/constants"
 
 const FRAME_HEIGHT: number = 180
 const FRAME_WIDTH: number = 280
@@ -87,23 +87,23 @@ export const Feet = styled.div`
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: auto	
+	margin: auto;
 `
 
 export const LoadingWrapper = styled.div`
 	display: flex;
-	flex-wrap: wrap; 
+	flex-wrap: wrap;
 `
 
 const blinkPixel = keyframes`
 	0% { opacity: 0; }
 	100% { opacity: 100; }
-` 
-  export const BlinkPixel = styled.div<{ color: string, time: number }>`
+`
+export const BlinkPixel = styled.div<{ color: string; time: number }>`
 	height: ${SPACING.s};
 	width: ${SPACING.s};
-	background-color: ${props => props.color};
-	-webkit-animation-name: ${blinkPixel};  
-	-webkit-animation-iteration-count: infinite;  
-	-webkit-animation-duration: ${props => props.time}s; 
-  `
+	background-color: ${(props) => props.color};
+	-webkit-animation-name: ${blinkPixel};
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: ${(props) => props.time}s;
+`
