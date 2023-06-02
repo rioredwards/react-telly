@@ -55,6 +55,7 @@ To get credentials for the Giphy API:
 # Lesson 1: Working with Props and State
 
 ## 1. Render the `Button` component in the `HomePage` component and make the button log something to the console
+- You can find the `HomePage` component at `src/pages/home/home.tsx` and the `Button` component at `src/components/Button/Button.tsx`
 
 ## 2. Now update the button so that when it is clicked, a random gif renders in the `GifViewer` component
 
@@ -69,15 +70,23 @@ To get credentials for the Giphy API:
 
 - Hint: the [useState hook](https://react.dev/reference/react/useState) is a good way to achieve this
 
-You can see a demo of the completed UI for this lesson at https://react-telly.vercel.app/.
+### You can see a demo of the completed UI for this lesson at https://react-telly.vercel.app/.
 
-# Lesson 2: Building Components
+# Lesson 2: Building and Updating Components
 
-Now that we've worked with some existing components, let's build our own! Your goal is to create a text input that allows the user to type a keyword in the input and then click the button to fetch a gif to display in the television based on that keyword.
+Now that we've worked with some existing components, let's build our own! Your goal is to create a text input that __allows the user to type a keyword in the input and then click the button to fetch a gif to display in the television based on that keyword.__
 
 Here are some specifics for the challenge:
 
 - After the user has clicked the button to submit the keyword, the input should revert to its empty state
-- The input should have a label and be styled to match this screenshot
+- The input should have a label, a focus state, and be styled to match this screenshot:
+![UI Screen Shot](./public/input.png)
+## Additional considerations
+- What happens if the user clicks the button without typing anything in the input? It's up to you whether to disable to button or supply a default keyword.
+- What happens if the user types a keyword that doesn't return any results from the API? Make sure the user sees a clear message that there are no results.
+## Stretch goal
+- Make it so the user can submit their keyword by hitting the enter key
+## Super stretch goal
+- Take a look at `src/data/gif.ts` and see how the request url is set up to only fetch g-rated gifs. Can you update `fetchGif` and the corresponding `useGif` hook to make the rating optional? Then create a checkbox component so the user can choose whether to see g-rated gifs or not.
 
-You can see a demo of the completed UI for this lesson at https://react-telly.vercel.app/lesson-2.
+### You can see a demo of the completed UI for this lesson at https://react-telly.vercel.app/lesson-2.
