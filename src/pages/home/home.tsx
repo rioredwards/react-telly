@@ -14,10 +14,24 @@ export const HomePage = () => {
 		isError,
 	} = useGif(DEFAULT_KEYWORD)
 
+	const [tvStarted, setTvStarted] = React.useState<boolean>(false)
+	const buttonMsg: string = tvStarted ? "Change Channel" : "Start"
+
+	const handleButtonClick = (): void => {
+		fetchNewGif()
+		if (!tvStarted) setTvStarted(true)
+	}
+
 	return (
 		<PageWrapper>
 			<Header>React Telly</Header>
-			<GifViewer />
+			<GifViewer
+				altText={gif?.data.title}
+				gifUrl={gif?.data.images.downsized_medium.url}
+				isError={isError}
+				isLoading={isLoading || isFetching}
+			/>
+			<Button onClick={handleButtonClick} children={buttonMsg} />
 		</PageWrapper>
 	)
 }
